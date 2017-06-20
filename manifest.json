@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "joblink",
   "description": "Gather all your personal links in one place for job applications.",
-  "version": 1.0,
+  "version": "1.0",
   "browser_action": {
     "default_popup": "popup.html"
   }
