@@ -3,7 +3,15 @@
   "name": "joblink",
   "description": "Gather all your personal links in one place for job applications.",
   "version": "1.0",
-  "browser_action": {
-    "default_popup": "popup.html"
-  }
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["css/bootstrap.min.css"],
+      "js": ["js/bootstrap.min.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
 }
