@@ -7,17 +7,20 @@ const saveLink = (text, source) => {
 }
 
 // retrieve from local storage
-const displayLink = () => {
+const displayLink = () => new Promise((resolve, reject) => {
   // using chromes storage API
   chrome.storage.local.get(function(data) {
-    // if the value exists
-    if(data) {
+    // if data exists
+    if (data) {
       let links = {};
-      for (var link in data) {
-        return links[link] = data[link];
+      for(link in data) {
+        // make sure each data belongs to object
+        if(!data.hasOwnProperty(link)) {
+          continue;
+        }
+        links[link] = data[link];
       }
-      // console.log(links);
-      return links;
+      resolve(links);
     }
   });
-}
+});
