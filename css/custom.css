@@ -1,0 +1,79 @@
+/* universal */
+* p {
+  margin-bottom: 0 !important;
+}
+
+* .input-group-addon {
+  border: none;
+  border-radius: 0 0 0 3px;
+}
+
+* input {
+  outline: none;
+  border: 1px solid #ECEEEF !important;
+  border-top-right-radius: 0 !important;
+}
+
+* button {
+  font-family: AvenirNext-Bold;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  background-color: #3EB991 !important;
+  border-radius: 100px;
+}
+
+body {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+/* individual links */
+#body-container {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  /*border-bottom: 1px solid #000;*/
+}
+.link-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background: #7D7F7F;
+  border-radius: 3px;
+}
+.link-placeholder {
+  font-family: AvenirNext-DemiBold;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 20px;
+  padding: 10px 0 10px 40px;
+}
+.link-bottom-container {
+  padding: 5px 0;
+  background: #3E3F40;
+  border-radius: 0 0 3px 3px;
+}
+.copy-link-placeholder {
+  font-family: AvenirNext-Medium;
+  font-size: 12px;
+  color: #FFFFFF;
+  line-height: 15px;
+}
+
+/* add new link */
+.list-link-container {
+  padding: 5px 0;
+  background: #7D55BF;
+  border-radius: 3px 3px 0 0;
+}
+.list-link-placeholder {
+  font-family: AvenirNext-DemiBold;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 20px;
+  /*background: #7D55BF;*/
+  border-radius: 3px 3px 0 0;
+}
+
+#newLinkItem {
+  display: none;
+}
