@@ -1,6 +1,6 @@
 // Show new link input on drowndown change
 $('#dropdown').change(function() {
-  var source = $(this).val();
+  const source = $(this).val();
 
   $('#newLinkItem').find('.chosen-link').text(source);
   $('#newLinkItem').show("fast");
@@ -8,16 +8,17 @@ $('#dropdown').change(function() {
 
 // Save the new link and append to page
 $('button').click(function() {
-  console.log("link: save")
-  console.log($('#dropdown').val());
+  const source = $('#dropdown').val().toLowerCase();
+  const $linkText = $('#basic-url');
 
-  var source = $('#dropdown').val().toLowerCase();
-  var $linkText = $('#basic-url');
   saveLink($linkText.val(), source);
 
   $($linkText).val(' ');
   $('#newLinkItem').hide("fast");
-  
-  const links = displayLink();
-  console.log(links);
+
+  displayLink().then(links => {
+    for(link in links) {
+      console.log(link + ": " + links[link]);
+    }
+  });
 });
