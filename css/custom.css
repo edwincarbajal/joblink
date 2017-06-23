@@ -28,16 +28,78 @@ body {
   max-width: 300px;
 }
 
+.AngelList-container {
+  background-color: #7D7F7F;
+}
+.AngelList-bottom-container {
+  background-color: #3E3F40;
+}
+
+.Behance-container {
+  background-color: #0E54E0;
+}
+.Behance-bottom-container {
+  background-color: #082E7A;
+}
+
+.Codepen-container {
+  background-color: #EDC951;
+}
+.Codepen-bottom-container {
+  background-color: #DBBA4B;
+}
+
+.Dribbble-container {
+  background-color: #E04983;
+}
+.Dribbble-bottom-container {
+  background-color: #7A2848;
+}
+
+.Github-container {
+  background-color: #7D55BF;
+}
+.Github-bottom-container {
+  background-color: #54397F;
+}
+
+.Medium-container {
+  background-color: #47E07D;
+}
+.Medium-bottom-container {
+  background-color: #3CBF6A;
+}
+
+.LinkedIn-container {
+  background-color: #FF8C00;
+}
+.LinkedIn-bottom-container {
+  background-color: #B26200
+}
+
+.Twitter-container {
+  background-color: #00ACFF;
+}
+.Twitter-bottom-container {
+  background-color: #0079B2;
+}
+
+
+
+
 /* individual links */
 #body-container {
   margin-bottom: 15px;
   padding-bottom: 5px;
+  min-height: 100px;
+  max-height: 400px;
+  overflow-y: auto;
   /*border-bottom: 1px solid #000;*/
 }
 .link-container {
   margin-top: 15px;
   margin-bottom: 10px;
-  background: #7D7F7F;
+  /*background: #7D7F7F;*/
   border-radius: 3px;
 }
 .link-placeholder {
@@ -49,7 +111,7 @@ body {
 }
 .link-bottom-container {
   padding: 5px 0;
-  background: #3E3F40;
+  /*background: #3E3F40;*/
   border-radius: 0 0 3px 3px;
 }
 .copy-link-placeholder {
@@ -62,7 +124,7 @@ body {
 /* add new link */
 .list-link-container {
   padding: 5px 0;
-  background: #7D55BF;
+  background: #5B87D9;
   border-radius: 3px 3px 0 0;
 }
 .list-link-placeholder {
