@@ -12,7 +12,6 @@ $(function() {
   $('#dropdown').change(function() {
     const source = $(this).val();
     $('#newLinkItem').find('.chosen-link').text(source);
-    $('#newLinkItem').addClass(`${source}-container`);
     $('#newLinkItem').show("fast");
   });
 
