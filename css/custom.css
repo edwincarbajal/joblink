@@ -89,13 +89,20 @@ body {
 
 /* individual links */
 #body-container {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
+  margin-bottom: 10px;
+  /*padding-bottom: 5px;*/
   min-height: 100px;
   max-height: 400px;
   overflow-y: auto;
   /*border-bottom: 1px solid #000;*/
 }
+#a-link {
+  cursor: pointer;
+}
+#a-link:hover {
+  opacity: 0.9;
+}
+
 .link-container {
   margin-top: 15px;
   margin-bottom: 10px;
@@ -119,6 +126,15 @@ body {
   font-size: 12px;
   color: #FFFFFF;
   line-height: 15px;
+}
+
+.options {
+  /*display: none;*/
+  top: -20px;
+  right: 20px;
+  /*border-radius: 2px;*/
+  font-size: 14px;
+  position: relative;
 }
 
 /* add new link */
