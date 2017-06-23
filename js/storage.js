@@ -24,3 +24,8 @@ const displayLink = () => new Promise((resolve, reject) => {
     }
   });
 });
+
+// remove item from local storage
+const deleteLink = (key) => {
+  chrome.storage.local.remove(key);
+}
