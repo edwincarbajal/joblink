@@ -1,9 +1,50 @@
 $(function() {
+  getDarkMode().then(item => {
+    if (item) {
+      $('#dark-mode-slide').prop('checked', true);
+      $('.list-group-item').addClass('dark_mode');
+      $('body').addClass('dark_mode');
+      $('#dropdown').addClass('dark_mode');
+      $('.nav-link').addClass('dark_nav');
+      $('button').addClass('dark_button');
+    };
+  });
+
+  $('.tab-pane').on('click', '.slider', function() {
+    getDarkMode().then(item => {
+      if (item) {
+        setDarkMode(false);
+        $('#dark-mode-slide').prop('unchecked', true);
+        $('.list-group-item').removeClass('dark_mode');
+        $('body').removeClass('dark_mode');
+        $('#dropdown').removeClass('dark_mode');
+        $('.nav-link').removeClass('dark_nav');
+        $('button').removeClass('dark_button');
+      } else {
+        setDarkMode(true);
+        $('#dark-mode-slide').prop('checked', true);
+        $('.list-group-item').addClass('dark_mode');
+        $('body').addClass('dark_mode');
+        $('#dropdown').addClass('dark_mode');
+        $('.nav-link').addClass('dark_nav');
+        $('button').addClass('dark_button');
+      }
+    });
+
+  });
+
+  $('body').on('click', '.settings-url', function(){
+     chrome.tabs.create({url: $(this).attr('href')});
+     return false;
+   });
+
   // display all saved links
   displayLink().then(links => {
     for(link in links) {
-      var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
-      $('#body-container').append(linkBod);
+      if (link !== 'dark_mode') {
+        var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+        $('#body-container').append(linkBod);
+      }
     }
   });
 
@@ -20,20 +61,24 @@ $(function() {
     const source = $('#dropdown').val();
     const $linkText = $('#basic-url');
 
-    if (source != 'Add Link: Source') {
-      saveLink($linkText.val(), source);
+    if(source != 'Add Link: Source') {
+      if($linkText.val() != '') {
+        saveLink($linkText.val(), source);
 
-      $($linkText).val('');
-      $('#dropdown')[0].selectedIndex = 0;
-      $('div').remove('#a-link');
-      $('#newLinkItem').hide("fast");
+        $($linkText).val('');
+        $('#dropdown')[0].selectedIndex = 0;
+        $('div').remove('#a-link');
+        $('#newLinkItem').hide("fast");
 
-      displayLink().then(links => {
-        for(link in links) {
-          var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
-          $('#body-container').append(linkBod);
-        }
-      });
+        displayLink().then(links => {
+          for(link in links) {
+            if (link !== 'dark_mode') {
+              var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+              $('#body-container').append(linkBod);
+            }
+          }
+        });
+      }
     }
   });
 
@@ -57,8 +102,10 @@ $(function() {
 
     displayLink().then(links => {
       for(link in links) {
-        var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
-        $('#body-container').append(linkBod);
+        if (link !== 'dark_mode') {
+          var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+          $('#body-container').append(linkBod);
+        }
       }
     });
   });
