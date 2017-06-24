@@ -25,6 +25,10 @@
   cursor: pointer;
 }
 
+.list-group {
+  margin-bottom: 20px;
+}
+
 body {
   min-width: 300px;
   max-width: 300px;
