@@ -86,8 +86,22 @@ body {
   background-color: #0079B2;
 }
 
+/* nav */
+.nav {
+  margin: 0 auto;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-link, .active {
+  outline: none !important;
+  border: none !important;
+}
 
-
+/* dropdown */
+#dropdown-row {
+  padding-top: 10px;
+}
 
 /* individual links */
 #body-container {
