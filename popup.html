@@ -8,54 +8,71 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class-"form-group">
-            <select id="dropdown" class="form-control">
-              <option selected>Add Link: Source</option>
-              <option value="AngelList">AngelList</option>
-              <option value="Behance">Behance</option>
-              <option value="Codepen">Codepen</option>
-              <option value="Dribbble">Dribbble</option>
-              <option value="Github">Github</option>
-              <option value="LinkedIn">LinkedIn</option>
-              <option value="Medium">Medium</option>
-              <option value="Twitter">Twitter</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <!-- end of dropdown -->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home" role="tab"><i class="fa fa-link" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#profile" role="tab"><i class="fa fa-cog" aria-hidden="true"></i></a>
+        </li>
+      </ul>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div id="body-container">
-            <div id="newLinkItem" class="link-container">
-              <div class="list-link-container">
-                <div class="list-link-placeholder text-center">
-                  <p class="chosen-link">Chosen Link<p>
-                </div>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel">
+          <div class="row">
+            <div class="col-md-6">
+              <div class-"form-group">
+                <select id="dropdown" class="form-control">
+                  <option selected>Add Link: Source</option>
+                  <option value="AngelList">AngelList</option>
+                  <option value="Behance">Behance</option>
+                  <option value="Codepen">Codepen</option>
+                  <option value="Dribbble">Dribbble</option>
+                  <option value="Github">Github</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Twitter">Twitter</option>
+                </select>
               </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon3">https://</span>
-                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" autofocus>
+            </div>
+          </div>
+          <!-- end of dropdown -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="body-container">
+                <div id="newLinkItem" class="link-container">
+                  <div class="list-link-container">
+                    <div class="list-link-placeholder text-center">
+                      <p class="chosen-link">Chosen Link<p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon3">https://</span>
+                      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" autofocus>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- end of body container -->
+          <!-- end of body container -->
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <button type="button" class="btn btn-md btn-block text-uppercase">add link</button>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <button type="button" class="btn btn-md btn-block text-uppercase col-10">add link</button>
+              </div>
+            </div>
           </div>
+          <!-- end of form -->
         </div>
+        
+        <div class="tab-pane" id="profile" role="tabpanel">1</div>
       </div>
-      <!-- end of form -->
     </div>
 
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
