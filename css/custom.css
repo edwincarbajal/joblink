@@ -19,8 +19,10 @@
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;
+  margin: 0 auto;
   background-color: #3EB991 !important;
-  border-radius: 100px;
+  border-radius: 100px !important;
+  cursor: pointer;
 }
 
 body {
@@ -89,6 +91,7 @@ body {
 
 /* individual links */
 #body-container {
+  margin-top: 10px;
   margin-bottom: 10px;
   /*padding-bottom: 5px;*/
   min-height: 100px;
@@ -99,7 +102,7 @@ body {
 #a-link {
   cursor: pointer;
 }
-#a-link:hover {
+#a-link:hover, button:hover {
   opacity: 0.9;
 }
 
