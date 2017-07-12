@@ -6,7 +6,7 @@ $(function() {
       $('body').addClass('dark_mode');
       $('#dropdown').addClass('dark_mode');
       $('.nav-link').addClass('dark_nav');
-      // $('.add-link-button').addClass('dark_button');
+      $('.add-link-button').addClass('dark_button');
     };
   });
 
@@ -33,7 +33,7 @@ $(function() {
 
   });
 
-  $('body').on('click', '.settings-url', function(){
+  $('body').on('click', '.settings-url', function() {
      chrome.tabs.create({url: $(this).attr('href')});
      return false;
    });
@@ -42,7 +42,7 @@ $(function() {
   displayLink().then(links => {
     for(link in links) {
       if (link !== 'dark_mode') {
-        var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase() === 'personalsite' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'PersonalSite' ? 'Personal site' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+        var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link === 'Portfolio' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'Portfolio' ? 'Portfolio' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
         $('#body-container').append(linkBod);
       }
     }
@@ -54,7 +54,8 @@ $(function() {
     $('#newLinkItem').find('.chosen-link').text(source);
     $('#newLinkItem').show("fast");
     $('.add-link-button').removeAttr('disabled');
-    $('.add-link-button').removeClass('disabled_button').addClass('dark_button')
+    // $('.add-link-button').removeClass('disabled_button').addClass('dark_button')
+    $('.add-link-button').removeClass('disabled_button');
     $('#basic-url').focus();
   });
 
@@ -75,13 +76,14 @@ $(function() {
         displayLink().then(links => {
           for(link in links) {
             if (link !== 'dark_mode') {
-              var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase() === 'personalsite' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'PersonalSite' ? 'Personal site' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+              var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link === 'Portfolio' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'Portfolio' ? 'Portfolio' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
               $('#body-container').append(linkBod);
             }
           }
         });
         $('.add-link-button').attr('disabled', 'disabled');
-        $('.add-link-button').removeClass('dark_button').addClass('disabled_button')
+        $('.add-link-button').addClass('disabled_button')
+        // $('.add-link-button').removeClass('dark_button').addClass('disabled_button')
       }
     }
   });
@@ -107,7 +109,7 @@ $(function() {
     displayLink().then(links => {
       for(link in links) {
         if (link !== 'dark_mode') {
-          var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+          var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link === 'Portfolio' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'Portfolio' ? 'Portfolio' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
           $('#body-container').append(linkBod);
         }
       }

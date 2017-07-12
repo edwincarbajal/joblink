@@ -83,18 +83,25 @@ body {
   background-color: #B26200
 }
 
+/*.Portfolio-container {
+  background-color: #F9423B;
+}
+.Portfolio-bottom-container {
+  background-color: #A01411;
+}*/
+
+.Portfolio-container {
+  background-color: #B8AE9C;
+}
+.Portfolio-bottom-container {
+  background-color: #595241;
+}
+
 .Twitter-container {
   background-color: #00ACFF;
 }
 .Twitter-bottom-container {
   background-color: #0079B2;
-}
-
-.PersonalSite-container {
-  background-color: #F9423B;
-}
-.PersonalSite-bottom-container {
-  background-color: #A01411;
 }
 
 /* nav */
@@ -255,14 +262,14 @@ input:checked + .slider:before {
   background-color: #54A4F5 !important;
 }
 
-.disabled_button {
-  background-color: darkgrey !important;
-}
-
 .dark_nav {
   color: #fff;
   background-color: #192633 !important;
 }
 .dark_mode_enabled {
   background-color: #2196F3;
+}
+
+.disabled_button {
+  background-color: darkgrey !important;
 }
