@@ -54,7 +54,6 @@ $(function() {
     $('#newLinkItem').find('.chosen-link').text(source);
     $('#newLinkItem').show("fast");
     $('.add-link-button').removeAttr('disabled');
-    // $('.add-link-button').removeClass('disabled_button').addClass('dark_button')
     $('.add-link-button').removeClass('disabled_button');
     $('#basic-url').focus();
   });
@@ -82,8 +81,7 @@ $(function() {
           }
         });
         $('.add-link-button').attr('disabled', 'disabled');
-        $('.add-link-button').addClass('disabled_button')
-        // $('.add-link-button').removeClass('dark_button').addClass('disabled_button')
+        $('.add-link-button').addClass('disabled_button');
       }
     }
   });
