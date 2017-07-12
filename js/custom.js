@@ -84,6 +84,8 @@ $(function() {
         $('.add-link-button').addClass('disabled_button');
       }
     }
+    $('.add-link-button').attr('disabled', 'disabled');
+    $('.add-link-button').removeClass('dark_button').addClass('disabled_button')
   });
 
   // copy cards link when clicked
