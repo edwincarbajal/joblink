@@ -6,7 +6,7 @@ $(function() {
       $('body').addClass('dark_mode');
       $('#dropdown').addClass('dark_mode');
       $('.nav-link').addClass('dark_nav');
-      $('button').addClass('dark_button');
+      // $('.add-link-button').addClass('dark_button');
     };
   });
 
@@ -19,7 +19,7 @@ $(function() {
         $('body').removeClass('dark_mode');
         $('#dropdown').removeClass('dark_mode');
         $('.nav-link').removeClass('dark_nav');
-        $('button').removeClass('dark_button');
+        $('.add-link-button').removeClass('dark_button');
       } else {
         setDarkMode(true);
         $('#dark-mode-slide').prop('checked', true);
@@ -27,7 +27,7 @@ $(function() {
         $('body').addClass('dark_mode');
         $('#dropdown').addClass('dark_mode');
         $('.nav-link').addClass('dark_nav');
-        $('button').addClass('dark_button');
+        $('.add-link-button').addClass('dark_button');
       }
     });
 
@@ -53,11 +53,13 @@ $(function() {
     const source = $(this).val();
     $('#newLinkItem').find('.chosen-link').text(source);
     $('#newLinkItem').show("fast");
+    $('.add-link-button').removeAttr('disabled');
+    $('.add-link-button').removeClass('disabled_button').addClass('dark_button')
     $('#basic-url').focus();
   });
 
   // Save the new link and append to page
-  $('button').click(function() {
+  $('.add-link-button').click(function() {
     const source = $('#dropdown').val();
     const $linkText = $('#basic-url');
 
@@ -80,6 +82,8 @@ $(function() {
         });
       }
     }
+    $('.add-link-button').attr('disabled', 'disabled');
+    $('.add-link-button').removeClass('dark_button').addClass('disabled_button')
   });
 
   // copy cards link when clicked

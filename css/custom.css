@@ -247,6 +247,11 @@ input:checked + .slider:before {
 .dark_button {
   background-color: #54A4F5 !important;
 }
+
+.disabled_button {
+  background-color: darkgrey !important;
+}
+
 .dark_nav {
   color: #fff;
   background-color: #192633 !important;
