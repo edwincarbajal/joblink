@@ -90,6 +90,13 @@ body {
   background-color: #0079B2;
 }
 
+.PersonalSite-container {
+  background-color: #F9423B;
+}
+.PersonalSite-bottom-container {
+  background-color: #A01411;
+}
+
 /* nav */
 .nav {
   margin: 0 auto;

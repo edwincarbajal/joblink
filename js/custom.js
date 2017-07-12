@@ -42,7 +42,7 @@ $(function() {
   displayLink().then(links => {
     for(link in links) {
       if (link !== 'dark_mode') {
-        var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+        var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase() === 'personalsite' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'PersonalSite' ? 'Personal site' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
         $('#body-container').append(linkBod);
       }
     }
@@ -75,7 +75,7 @@ $(function() {
         displayLink().then(links => {
           for(link in links) {
             if (link !== 'dark_mode') {
-              var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
+              var linkBod = `<div id="a-link" class="link-container ${link}-container" href="${links[link]}" data-toggle="tooltip" data-placement="bottom" trigger="click" title="Link copied!"><div class="link-placeholder"><p><i class="fa fa-${link.toLowerCase() === 'personalsite' ? 'briefcase' : link.toLowerCase()} fa-lg" aria-hidden="true"></i> ${link === 'PersonalSite' ? 'Personal site' : link}</p><div id="${link}"class="float-right options"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div><div class="link-bottom-container ${link}-bottom-container"><div class="copy-link-placeholder text-center"><p>Copy Link</p></div></div></div>`
               $('#body-container').append(linkBod);
             }
           }
