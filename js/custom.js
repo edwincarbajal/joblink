@@ -6,7 +6,7 @@ $(function() {
       $('body').addClass('dark_mode');
       $('#dropdown').addClass('dark_mode');
       $('.nav-link').addClass('dark_nav');
-      $('button').addClass('dark_button');
+      // $('button').addClass('dark_button');
     };
   });
 
@@ -53,6 +53,8 @@ $(function() {
     const source = $(this).val();
     $('#newLinkItem').find('.chosen-link').text(source);
     $('#newLinkItem').show("fast");
+    $('button').removeAttr('disabled');
+    $('button').removeClass('disabled_button').addClass('dark_button')
     $('#basic-url').focus();
   });
 
@@ -80,6 +82,8 @@ $(function() {
         });
       }
     }
+    $('button').attr('disabled', 'disabled');
+    $('button').removeClass('dark_button').addClass('disabled_button')
   });
 
   // copy cards link when clicked
