@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "jobLink",
   "description": "Gather all your personal links in one place for job applications.",
-  "version": "1.0",
+  "version": "1.1.1",
   "browser_action": {
     "default_icon": {
       "16": "images/icon16.png",
